@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        app:cardElevation="8dp"
+        app:cardBackgroundColor="#F1F0F0"
+        app:cardCornerRadius="16dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="?android:selectableItemBackground"
+            android:paddingBottom="@dimen/vertical_margin"
+            android:paddingLeft="@dimen/horizontal_margin"
+            android:paddingRight="@dimen/horizontal_margin"
+            android:paddingTop="@dimen/vertical_margin">
+
+        <TextView
+                android:text="No Urut 1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:textColor="#1E1F1E"
+                android:drawableRight="@drawable/ic_arrow_24dp"
+                android:id="@+id/list_data_noUrut_text" app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"/>
+
+        <de.hdodenhof.circleimageview.CircleImageView android:layout_width="50dp" android:layout_height="50dp"
+                                                      android:src="@drawable/orang_1"
+                                                      app:layout_constraintTop_toBottomOf="@+id/list_data_noUrut_text"
+                                                      app:layout_constraintStart_toStartOf="@+id/list_data_noUrut_text"
+                                                      android:layout_marginTop="24dp" android:id="@+id/input_kandidat_stub_img1"/>
+        <TextView
+                android:text="Kandidat 1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/list_data_nama_text"
+                android:textColor="#1E1F1E"
+                android:textAllCaps="true"
+                app:layout_constraintTop_toTopOf="@+id/input_kandidat_stub_img1"
+                app:layout_constraintStart_toEndOf="@+id/input_kandidat_stub_img1" app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginStart="8dp" android:layout_marginEnd="8dp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"/>
+
+        <de.hdodenhof.circleimageview.CircleImageView android:layout_width="50dp" android:layout_height="50dp"
+                                                      android:src="@drawable/orang_2"
+                                                      app:layout_constraintTop_toBottomOf="@+id/input_kandidat_stub_img1"
+                                                      app:layout_constraintStart_toStartOf="@+id/input_kandidat_stub_img1"
+                                                      android:layout_marginTop="24dp"
+                                                      android:id="@+id/input_kandidat_stub_img2"/>
+        <TextView
+                android:text="Kandidat 2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/list_data_nama_wakil_text"
+                android:textColor="#1E1F1E"
+                android:textAllCaps="true"
+                app:layout_constraintTop_toTopOf="@+id/input_kandidat_stub_img2" app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/input_kandidat_stub_img2" android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp" android:textAppearance="@style/TextAppearance.AppCompat.Medium"/>
+        <TextView
+                android:text="TextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/list_data_daerah_text1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/input_kandidat_stub_img1" android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp" android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                android:layout_marginTop="8dp" app:layout_constraintTop_toBottomOf="@+id/list_data_nama_text"/>
+        <TextView
+                android:text="TextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/list_data_daerah_text2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/input_kandidat_stub_img2" android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp" android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                app:layout_constraintTop_toBottomOf="@+id/list_data_nama_wakil_text"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

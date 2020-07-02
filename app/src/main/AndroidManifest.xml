@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          xmlns:dist="http://schemas.android.com/apk/distribution"
+          package="com.unsera.sipe3">
+
+    <dist:module dist:instant="true"/>
+
+    <application
+            android:name=".MyApplication"
+            android:allowBackup="true"
+            android:icon="@drawable/kpu_logo"
+            android:label="@string/app_name"
+            android:roundIcon="@mipmap/ic_launcher_round"
+            android:supportsRtl="true"
+            android:theme="@style/AppTheme">
+        <activity android:name=".daftar.DaftarActivity" android:screenOrientation="portrait">
+        </activity>
+        <activity
+                android:name=".inputpasal.InputPasalActivity"
+                android:screenOrientation="portrait">
+        </activity>
+        <activity
+                android:name=".detailkandidat.DetailKandidatActivity"
+                android:screenOrientation="portrait">
+        </activity>
+        <activity
+                android:name=".inputpelanggaran.InputPelanggaranActivity"
+                android:screenOrientation="portrait">
+        </activity>
+        <activity
+                android:name=".admin.Admin2Activity"
+                android:screenOrientation="portrait">
+        </activity>
+        <activity
+                android:name=".detailpengaduan.DetailPengaduanActivity"
+                android:screenOrientation="portrait">
+        </activity>
+        <activity
+                android:name=".inputpengaduan.InputPengaduanActivity"
+                android:screenOrientation="portrait">
+        </activity>
+        <activity
+                android:name=".inputkandidat.InputKandidatActivity"
+                android:screenOrientation="portrait">
+        </activity>
+        <activity
+                android:name=".StartUpActivity"
+                android:screenOrientation="portrait"
+                android:theme="@style/Theme.Intro">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity
+                android:name=".admin.AdminActivity"
+                android:label="@string/title_activity_admin"
+                android:screenOrientation="portrait">
+        </activity>
+        <activity
+                android:name=".login.LoginActivity"
+                android:screenOrientation="portrait">
+        </activity>
+        <activity
+                android:name=".MainActivity"
+                android:label="@string/app_name"
+                android:screenOrientation="portrait"
+                android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+    </application>
+
+</manifest>

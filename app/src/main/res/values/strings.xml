@@ -1,0 +1,35 @@
+<resources>
+    <string name="app_name">KPU</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_login">Sign in</string>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="welcome">"Welcome !"</string>
+    <string name="invalid_username">Not a valid username</string>
+    <string name="invalid_password">Password must be >5 characters</string>
+    <string name="login_failed">"Login failed"</string>
+    <string name="title_activity_admin">AdminActivity</string>
+    <string name="title_kandidat">Kandidat</string>
+    <string name="title_profil">Profil</string>
+    <string name="title_pasal_pelanggaran">Pasal</string>
+    <string name="title_pengaduan">Pengaduan</string>
+    <string name="title_hasil">Hasil</string>
+    <string name="title_pelanggaran">Pelanggaran</string>
+    <string name="title_slide_1">Ayo Tentukan Suara Mu</string>
+    <string name="title_slide_2">Hindari Kecurangan Dengan SIPE3</string>
+    <string name="description_slide_1">Melaksanakan pergantian personal pemerintahan secara damai, aman, dan tertib
+        (secara konstitusional). Menjamin kesinambungan pembangunan nasional
+    </string>
+    <string name="description_slide_2">Hindari kecurangan dan pelanggaran pemilu dengan tepat cepat dan transparan
+    </string>
+    <string name="title_mulai">Mulai</string>
+    <string name="stub_no_pasal">Pasal 455</string>
+    <string name="stub_keterangan_pasal">Tidak Memberikan Salinan Daftar Pemilih Tetap Kepada Partai Politik Peserta
+        Pemilu Ketentuan Pidana
+    </string>
+    <string name="view_title_kandidat">Belum Ada Kandidat Terpilih</string>
+    <string name="view_title_pelanggaran">Belum Ada Pelanggaran Diterima</string>
+    <string name="view_title_pengaduan">Belum Ada Pengajuan Pengaduan</string>
+</resources>

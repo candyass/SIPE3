@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:id="@+id/mobile_navigation2" app:startDestination="@id/navigation_kandidat2">
+
+    <fragment
+            android:id="@+id/navigation_kandidat2"
+            android:name="com.unsera.sipe3.ui.kandidat.KandidatFragment"
+            android:label="@string/title_kandidat"
+            tools:layout="@layout/fragment_kandidat"/>
+
+    <fragment android:id="@+id/navigation_pasal_pelanggaran2"
+              android:name="com.unsera.sipe3.ui.pasal.PasalFragment"
+              android:label="@string/title_pasal_pelanggaran"/>
+
+    <fragment
+            android:id="@+id/navigation_pengaduan2"
+            android:name="com.unsera.sipe3.ui.pengaduan.PengaduanFragment"
+            android:label="@string/title_pengaduan"
+            tools:layout="@layout/fragment_pengaduan"/>
+
+    <fragment android:id="@+id/navigation_hasil"
+              android:name="com.unsera.sipe3.ui.hasil.HasilFragment"
+              android:label="@string/title_hasil"/>
+
+</navigation>

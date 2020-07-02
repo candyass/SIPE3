@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".detailpengaduan.DetailPengaduanActivity">
+
+    <androidx.cardview.widget.CardView
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:cardElevation="8dp"
+            android:id="@+id/detail_pengaduan_cardView"
+            app:cardBackgroundColor="#F1F0F0"
+            app:cardCornerRadius="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginEnd="8dp" android:layout_marginStart="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/textView8">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="?android:selectableItemBackground"
+                android:paddingBottom="8dp">
+
+            <de.hdodenhof.circleimageview.CircleImageView android:layout_width="50dp" android:layout_height="50dp"
+                                                          android:src="@drawable/orang_1"
+                                                          android:id="@+id/detail_kandidat_stub_img1"
+                                                          app:layout_constraintTop_toTopOf="parent"
+                                                          android:layout_marginTop="8dp"
+                                                          app:layout_constraintStart_toStartOf="parent"
+                                                          android:layout_marginStart="8dp"/>
+            <TextView
+                    android:text="Plih Kandidat"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/detail_pengaduan_nama_text"
+                    android:textColor="#1E1F1E"
+                    android:textAllCaps="true"
+                    app:layout_constraintTop_toTopOf="@+id/detail_kandidat_stub_img1"
+                    app:layout_constraintStart_toEndOf="@+id/detail_kandidat_stub_img1"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_marginStart="8dp" android:layout_marginEnd="8dp"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"/>
+
+            <de.hdodenhof.circleimageview.CircleImageView android:layout_width="50dp" android:layout_height="50dp"
+                                                          android:src="@drawable/orang_2"
+                                                          app:layout_constraintTop_toBottomOf="@+id/detail_kandidat_stub_img1"
+                                                          app:layout_constraintStart_toStartOf="@+id/detail_kandidat_stub_img1"
+                                                          android:layout_marginTop="24dp"
+                                                          android:id="@+id/input_kandidat_stub_img2"/>
+            <TextView
+                    android:text="Pilih Wakil Kandidat"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/detail_pengaduan_nama_wakil_text"
+                    android:textColor="#1E1F1E"
+                    android:textAllCaps="true"
+                    app:layout_constraintTop_toTopOf="@+id/input_kandidat_stub_img2"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/input_kandidat_stub_img2" android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp" android:textAppearance="@style/TextAppearance.AppCompat.Medium"/>
+            <TextView
+                    android:text="Provinsi/Kota"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/detail_pengaduan_daerah1_text"
+                    app:layout_constraintTop_toBottomOf="@+id/detail_pengaduan_nama_text"
+                    app:layout_constraintBottom_toBottomOf="@+id/detail_kandidat_stub_img1"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/detail_kandidat_stub_img1" android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp" android:textAppearance="@style/TextAppearance.AppCompat.Small"/>
+            <TextView
+                    android:text="Provinsi/Kota"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/detail_pengaduan_daerah2_text"
+                    app:layout_constraintTop_toBottomOf="@+id/detail_pengaduan_nama_wakil_text"
+                    app:layout_constraintBottom_toBottomOf="@+id/input_kandidat_stub_img2"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/input_kandidat_stub_img2" android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp" android:textAppearance="@style/TextAppearance.AppCompat.Small"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+    <TextView
+            android:text="tanggal"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:paddingLeft="8dp"
+            android:drawableLeft="@drawable/ic_tanggal_white_24dp"
+            android:background="@drawable/round_title"
+            android:textColor="@android:color/white"
+            android:id="@+id/detail_pengaduan_tanggal" app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="8dp"
+            android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+            app:layout_constraintHorizontal_bias="1.0"
+            android:layout_marginTop="8dp" app:layout_constraintTop_toBottomOf="@+id/detail_pengaduan_email_text"/>
+    <TextView
+            android:text="Pelanggaran"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:paddingLeft="8dp"
+            android:background="@drawable/round_title"
+            android:textColor="@android:color/white"
+            android:id="@+id/detail_pengaduan_jumlah_pasal"
+            android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+            android:layout_marginTop="8dp" app:layout_constraintTop_toBottomOf="@+id/detail_pengaduan_cardView"
+            android:layout_marginEnd="8dp" app:layout_constraintEnd_toEndOf="parent" android:layout_marginStart="8dp"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+    <androidx.recyclerview.widget.RecyclerView android:layout_width="0dp" android:layout_height="0dp"
+                                               app:layout_constraintEnd_toEndOf="parent"
+                                               app:layout_constraintStart_toStartOf="parent"
+                                               android:id="@+id/detail_pengaduan_recyclerView"
+                                               tools:listitem="@layout/list_pasal"
+                                               app:layout_constraintHorizontal_bias="0.0"
+                                               android:layout_marginBottom="8dp"
+                                               app:layout_constraintBottom_toBottomOf="parent"
+                                               app:layout_constraintTop_toBottomOf="@+id/textView10"/>
+    <TextView
+            android:text=""
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/line_separator_grey"
+            android:id="@+id/textView8" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/detail_pengaduan_tanggal" android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"/>
+    <TextView
+            android:text=""
+            android:background="@drawable/line_separator_grey"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView10" app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
+            app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/detail_pengaduan_jumlah_pasal"/>
+    <TextView
+            android:text="Identitas Pelapor"
+            android:layout_width="0dp"
+            android:paddingLeft="8dp"
+            android:drawableLeft="@drawable/ic_pelapor_white_24dp"
+            android:background="@drawable/round_primary"
+            android:textColor="@android:color/white"
+            android:layout_height="wrap_content"
+            android:id="@+id/detail_pengaduan_nama_pelapor_text" app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp" app:layout_constraintTop_toTopOf="parent"/>
+    <TextView
+            android:text="TextView"
+            android:layout_width="0dp"
+            android:paddingLeft="8dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/detail_pengaduan_no_ktp_pelapor" app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
+            app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/detail_pengaduan_nama_pelapor_text"
+            android:textAppearance="@style/TextAppearance.AppCompat.Subhead"/>
+    <TextView
+            android:text="TextView"
+            android:layout_width="0dp"
+            android:paddingLeft="8dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/detail_pengaduan_nama_pelapor" app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
+            app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp" app:layout_constraintTop_toBottomOf="@+id/detail_pengaduan_no_ktp_pelapor"
+            android:textAppearance="@style/TextAppearance.AppCompat.Subhead"/>
+    <TextView
+            android:text="TextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:paddingLeft="8dp"
+            android:id="@+id/detail_pengaduan_email_text" app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
+            app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp" app:layout_constraintTop_toBottomOf="@+id/detail_pengaduan_nama_pelapor"
+            android:textAppearance="@style/TextAppearance.AppCompat.Subhead"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

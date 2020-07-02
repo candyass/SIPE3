@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:id="@+id/navigation_profil"
+          android:icon="@drawable/ic_profil_24dp"
+          android:title="@string/title_profil"/>
+
+    <item
+            android:id="@+id/navigation_kandidat"
+            android:icon="@drawable/ic_kandidat"
+            android:title="@string/title_kandidat"/>
+
+    <item
+            android:id="@+id/navigation_pasal_pelanggaran"
+            android:icon="@drawable/ic_pasal_24dp"
+            android:title="@string/title_pasal_pelanggaran"/>
+
+    <item
+            android:id="@+id/navigation_pengaduan"
+            android:icon="@drawable/ic_kriteria"
+            android:title="@string/title_pengaduan"/>
+
+    <item
+            android:id="@+id/navigation_pelanggaran"
+            android:icon="@drawable/ic_pelanggaran"
+            android:title="@string/title_pelanggaran"/>
+
+
+
+</menu>
