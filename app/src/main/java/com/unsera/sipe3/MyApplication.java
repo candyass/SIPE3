@@ -151,12 +151,34 @@ public class MyApplication extends Application {
         return future.get();
     }
 
+    public void deletePasal(long id) {
+        executor.execute(() -> {
+            appDatabase.getPasalDao().deletePasal(id);
+        });
+    }
+
+    public LiveData<Kandidat> getKandidat(long id) {
+        return appDatabase.getKandidatDao().getKandidat(id);
+    }
+
     public LiveData<User> getUser(String noKTP) {
         return appDatabase.getUserDao().getUser(noKTP);
     }
 
     public LiveData<List<KandidatChart>> getChartKandidat() {
         return appDatabase.getPengaduanDao().getChartkandidat();
+    }
+
+    public void updateKandidat(Kandidat kandidat) {
+        executor.execute(() -> {
+            appDatabase.getKandidatDao().updateKandidat(kandidat);
+        });
+    }
+
+    public void hapusKandidat(Kandidat kandidat) {
+        executor.execute(() -> {
+            appDatabase.getKandidatDao().hapusKandidat(kandidat);
+        });
     }
 
 

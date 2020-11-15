@@ -105,4 +105,24 @@
     </com.google.android.material.textfield.TextInputLayout>
 
 
+    <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/daftar_alamat_outlinedTextField"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="Alamat Rumah"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            app:layout_constraintTop_toBottomOf="@+id/daftar_email_outlinedTextField"
+            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="8dp" android:layout_marginEnd="8dp" android:layout_marginStart="8dp">
+
+        <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/daftar_alamat_editText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+        />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

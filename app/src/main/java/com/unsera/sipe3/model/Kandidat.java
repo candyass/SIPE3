@@ -25,6 +25,15 @@ public class Kandidat {
     }
 
     @Ignore
+    public Kandidat(long id, int noUrut, String nama, String namaWakil, long daerahId) {
+        this.id = id;
+        this.noUrut = noUrut;
+        this.nama = nama;
+        this.namaWakil = namaWakil;
+        this.daerahId = daerahId;
+    }
+
+    @Ignore
     public Kandidat(int noUrut, String nama, String namaWakil, long daerahId) {
         this.noUrut = noUrut;
         this.nama = nama;

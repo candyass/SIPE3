@@ -6,17 +6,16 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.FrameLayout;
 import android.widget.TextView;
 import android.widget.ViewSwitcher;
 import androidx.annotation.NonNull;
-import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.unsera.sipe3.R;
+import com.unsera.sipe3.updatekandidat.UpdateKandidatActivity;
 import com.unsera.sipe3.admin.Admin2Activity;
 import com.unsera.sipe3.admin.AdminActivity;
 import com.unsera.sipe3.detailkandidat.DetailKandidatActivity;
@@ -76,7 +75,7 @@ public class KandidatFragment extends Fragment {
         });
 
         // check user pemohon
-        if(getActivity() instanceof Admin2Activity) {
+        if(getActivity() instanceof AdminActivity) {
             fab.setVisibility(View.GONE);
         }
 
@@ -126,7 +125,12 @@ public class KandidatFragment extends Fragment {
 
         @Override
         public void onClick(View v) {
-            Intent intent = DetailKandidatActivity.newIntent(getContext(), view.getId());
+            Intent intent = null;
+            if(getActivity() instanceof Admin2Activity) {
+                intent = UpdateKandidatActivity.newIntent(getContext(), view.getId(), String.valueOf(view.getNoUrut()), view.getNama(), view.getNamaWakil(), (int) view.getDaerahId());
+            }else {
+                intent = DetailKandidatActivity.newIntent(getContext(), view.getId());
+            }
             startActivity(intent);
         }
     }

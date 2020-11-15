@@ -26,4 +26,9 @@ public class InputPasalViewModel extends AndroidViewModel {
         MyApplication app = (MyApplication) getApplication();
         app.updatePasal(pasal);
     }
+
+    public void deletePasal(long id) {
+        MyApplication app = (MyApplication) getApplication();
+        app.deletePasal(id);
+    }
 }

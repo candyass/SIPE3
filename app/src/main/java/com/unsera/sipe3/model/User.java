@@ -17,6 +17,7 @@ public class User {
     private String password;
     private String nama;
     private String email;
+    private String alamatRumah;
     private int userType;
 
     public User() {
@@ -24,12 +25,13 @@ public class User {
     }
 
     @Ignore
-    public User(String noKTP, String password, String nama, int userType, String email) {
+    public User(String noKTP, String password, String nama, int userType, String email, String alamatRumah) {
         this.setNoKTP(noKTP);
         this.setPassword(password);
         this.setNama(nama);
         this.userType = userType;
         this.setEmail(email);
+        this.setAlamatRumah(alamatRumah);
     }
 
 
@@ -75,5 +77,14 @@ public class User {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+
+    public String getAlamatRumah() {
+        return alamatRumah;
+    }
+
+    public void setAlamatRumah(String alamatRumah) {
+        this.alamatRumah = alamatRumah;
     }
 }

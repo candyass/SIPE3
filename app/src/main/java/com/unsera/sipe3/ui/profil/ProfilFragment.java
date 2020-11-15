@@ -29,11 +29,13 @@ public class ProfilFragment extends Fragment {
         TextView textNoKTP = root.findViewById(R.id.profil_no_ktp_text);
         TextView textNama = root.findViewById(R.id.profil_nama_text);
         TextView textEmail = root.findViewById(R.id.profil_email_text);
+        TextView textAlamat = root.findViewById(R.id.profil_alamat_text);
 
         viewModel.getUser(noKTP).observe(this, user -> {
             textNoKTP.setText(user.getNoKTP());
             textNama.setText(user.getNama());
             textEmail.setText(user.getEmail());
+            textAlamat.setText(user.getAlamatRumah());
         });
 
 

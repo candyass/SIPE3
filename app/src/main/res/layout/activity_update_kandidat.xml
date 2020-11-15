@@ -5,33 +5,14 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".inputkandidat.InputKandidatActivity">
+        tools:context=".updatekandidat.UpdateKandidatActivity">
 
-
-    <de.hdodenhof.circleimageview.CircleImageView
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:src="@drawable/ic_team"
-            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" android:layout_marginTop="16dp"
-            android:id="@+id/circleImageView"/>
-    <Button
-            android:text="Upload"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:id="@+id/input_kandidat_upload_button"
-            android:background="@drawable/primary_button"
-            android:textColor="@android:color/white"
-            app:layout_constraintTop_toBottomOf="@+id/circleImageView"
-            app:layout_constraintEnd_toEndOf="@+id/circleImageView"
-            app:layout_constraintStart_toStartOf="@+id/circleImageView"
-            style="@style/Widget.AppCompat.Button.Small"/>
 
     <Button
-            android:text="SIMPAN"
+            android:text="simpan perubahan"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:id="@+id/input_kandidat_simpan_button"
+            android:id="@+id/update_kandidat_simpan_button"
             android:textColor="@android:color/white"
             android:background="@drawable/accent_button"
             app:layout_constraintBottom_toBottomOf="parent" android:layout_marginBottom="8dp"
@@ -40,18 +21,24 @@
     <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            app:layout_constraintTop_toBottomOf="@+id/input_kandidat_upload_button"
             app:layout_constraintEnd_toEndOf="parent"
             app:cardElevation="16dp"
             app:cardCornerRadius="16dp"
             app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="8dp"
-            android:layout_marginEnd="8dp" android:layout_marginTop="16dp" android:layout_marginBottom="24dp"
-            app:layout_constraintBottom_toTopOf="@+id/input_kandidat_simpan_button">
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp" app:layout_constraintBottom_toTopOf="@+id/update_kandidat_hapus_button"
+            app:layout_constraintTop_toTopOf="parent" android:layout_marginTop="8dp">
         <LinearLayout
                 android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:padding="16dp">
+
+            <ImageView android:layout_width="match_parent"
+                       android:layout_height="46dp"
+                       android:src="@drawable/kpu_logo"
+                       android:layout_marginTop="8dp"
+                       android:layout_marginBottom="8dp"/>
 
             <TextView
                     android:text="No Urut"
@@ -59,55 +46,64 @@
                     android:layout_height="wrap_content"
                     android:textColor="@color/colorPrimary"
                     android:textStyle="bold"
-                    android:id="@+id/textView2"
+                    android:id="@+id/textView22"
                     android:textAppearance="@style/TextAppearance.AppCompat.Small"/>
             <EditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="number"
                     android:ems="10"
-                    android:id="@+id/input_activity_edit_no_urut"/>
+                    android:id="@+id/update_activity_edit_no_urut"/>
             <TextView
                     android:text="Nama Kandidat"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textColor="@color/colorPrimary"
                     android:textStyle="bold"
-                    android:id="@+id/textView3" android:layout_marginEnd="16dp"
+                    android:id="@+id/textView33" android:layout_marginEnd="16dp"
                     android:textAppearance="@style/TextAppearance.AppCompat.Small"/>
             <EditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="textPersonName"
                     android:ems="10"
-                    android:id="@+id/input_activity_edit_nama_kandidat"/>
+                    android:id="@+id/update_activity_edit_nama_kandidat"/>
             <TextView
                     android:text="Nama Wakil Kandidat"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textColor="@color/colorPrimary"
                     android:textStyle="bold"
-                    android:id="@+id/input_kandidat_label" android:layout_marginEnd="16dp"
+                    android:id="@+id/update_kandidat_label" android:layout_marginEnd="16dp"
                     android:textAppearance="@style/TextAppearance.AppCompat.Small"/>
             <EditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="textPersonName"
                     android:ems="10"
-                    android:id="@+id/input_kandidat_namaWakil_text"/>
+                    android:id="@+id/update_kandidat_namaWakil_text"/>
             <TextView
                     android:text="Daerah"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textColor="@color/colorPrimary"
                     android:textStyle="bold"
-                    android:id="@+id/textView4"
+                    android:id="@+id/textView44"
                     android:textAppearance="@style/TextAppearance.AppCompat.Small"/>
             <Spinner
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/input_kandidat_spinner"/>
+                    android:id="@+id/update_kandidat_spinner"/>
         </LinearLayout>
     </androidx.cardview.widget.CardView>
+    <Button
+            android:text="Hapus Kandidat"
+            android:layout_width="0dp"
+            android:background="@drawable/primary_button"
+            android:textColor="@android:color/white"
+            android:layout_height="wrap_content" android:id="@+id/update_kandidat_hapus_button"
+            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/update_kandidat_simpan_button" android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp" android:layout_marginBottom="8dp"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

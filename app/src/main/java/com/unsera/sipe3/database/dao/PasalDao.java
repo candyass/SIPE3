@@ -30,5 +30,8 @@ public interface PasalDao {
     @Update
     void updatePasal(Pasal pasal);
 
+    @Query("DELETE FROM Pasal WHERE id =:id")
+    void deletePasal(long id);
+
 
 }

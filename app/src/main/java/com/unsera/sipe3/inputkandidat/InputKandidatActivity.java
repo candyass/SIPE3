@@ -104,7 +104,9 @@ public class InputKandidatActivity extends AppCompatActivity {
 
     private boolean isTextBukanAngka(EditText editText) {
         try {
-            Integer.parseInt(editText.getText().toString());
+            int i = Integer.parseInt(editText.getText().toString());
+            if(i <= 0)
+                return true;
         }catch (NumberFormatException e) {
             return true;
         }

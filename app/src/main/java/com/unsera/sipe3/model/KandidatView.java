@@ -12,19 +12,22 @@ public class KandidatView {
     private String kota;
     private String provinsi;
     private Bitmap foto;
+    private long daerahId;
+
 
 
     public KandidatView() {
 
     }
 
-    public KandidatView(long id, int noUrut, String nama, String namaWakil, String kota, String provinsi) {
+    public KandidatView(long id, int noUrut, String nama, String namaWakil, String kota, String provinsi, long daerahId) {
         this.setId(id);
         this.setNoUrut(noUrut);
         this.setNama(nama);
         this.setNamaWakil(namaWakil);
         this.setKota(kota);
         this.setProvinsi(provinsi);
+        this.setDaerahId(daerahId);
     }
 
 
@@ -82,5 +85,13 @@ public class KandidatView {
 
     public void setProvinsi(String provinsi) {
         this.provinsi = provinsi;
+    }
+
+    public long getDaerahId() {
+        return daerahId;
+    }
+
+    public void setDaerahId(long daerahId) {
+        this.daerahId = daerahId;
     }
 }

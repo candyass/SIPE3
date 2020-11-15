@@ -92,5 +92,15 @@ public class InputPasalActivity extends AppCompatActivity {
             setResult(Activity.RESULT_OK);
             finish();
         });
+
+        Button hapusButton = findViewById(R.id.input_pasal_hapus_button);
+
+        hapusButton.setOnClickListener(v -> {
+            viewModel.deletePasal(getIntent().getLongExtra(EXTRA_ID, -1));
+            Intent intent = new Intent();
+            intent.putExtra("hapus", true);
+            setResult(Activity.RESULT_OK, intent);
+            finish();
+        });
     }
 }

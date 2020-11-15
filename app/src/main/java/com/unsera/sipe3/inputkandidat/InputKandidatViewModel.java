@@ -40,6 +40,22 @@ public class InputKandidatViewModel extends AndroidViewModel {
         app.insertkandidat(kandidat);
     }
 
+    public LiveData<Kandidat> getKandidat(long id) {
+        MyApplication app = (MyApplication) getApplication();
+        return app.getKandidat(id);
+    }
+
+    public void updateKandidat(Kandidat kandidat) {
+        MyApplication app = (MyApplication) getApplication();
+        app.updateKandidat(kandidat);
+    }
+
+
+    public void hapusKandidat(Kandidat kandidat) {
+        MyApplication app =  (MyApplication) getApplication();
+        app.hapusKandidat(kandidat);
+    }
+
 
 
 

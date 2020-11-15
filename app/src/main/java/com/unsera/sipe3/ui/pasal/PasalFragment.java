@@ -79,7 +79,13 @@ public class PasalFragment extends Fragment {
         if(resultCode == Activity.RESULT_OK && requestCode == InputPasalActivity.REQUEST_INPUT_PASAL) {
             Snackbar.make(root, "Pasal Ditambahkan", Snackbar.LENGTH_SHORT).show();
         }else if(resultCode == Activity.RESULT_OK && requestCode == InputPasalActivity.REQUEST_EDIT_PASAL) {
-            Snackbar.make(root, "Pasal Diubah", Snackbar.LENGTH_SHORT).show();
+            if(data == null) {
+                Snackbar.make(root, "Pasal Diubah", Snackbar.LENGTH_SHORT).show();
+            }else {
+                if(data.getBooleanExtra("hapus", false)) {
+                    Snackbar.make(root, "Pasal Dihapus", Snackbar.LENGTH_SHORT).show();
+                }
+            }
         }
     }
 

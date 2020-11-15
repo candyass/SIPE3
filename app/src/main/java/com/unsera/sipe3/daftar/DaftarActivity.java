@@ -16,7 +16,7 @@ import java.util.concurrent.ExecutionException;
 
 public class DaftarActivity extends AppCompatActivity {
 
-    private EditText editNoKTP, editPassword, editNama, editEmail;
+    private EditText editNoKTP, editPassword, editNama, editEmail, editAlamat;
     private Button simpanButton;
     private DaftarViewModel viewModel;
 
@@ -36,6 +36,7 @@ public class DaftarActivity extends AppCompatActivity {
         editPassword = findViewById(R.id.daftar_password_editText);
         editNama = findViewById(R.id.daftar_nama_editText);
         editEmail = findViewById(R.id.daftar_email_editText);
+        editAlamat = findViewById(R.id.daftar_alamat_editText);
         simpanButton = findViewById(R.id.daftar_simpan_btn);
 
         viewModel = ViewModelProviders.of(this).get(DaftarViewModel.class);
@@ -53,8 +54,9 @@ public class DaftarActivity extends AppCompatActivity {
             String password = editPassword.getText().toString();
             String nama = editNama.getText().toString();
             String email = editEmail.getText().toString();
+            String alamat = editAlamat.getText().toString();
 
-            User user = new User(noKTP, password, nama, 1, email);
+            User user = new User(noKTP, password, nama, 1, email, alamat);
             int result = -1;
             try {
                 result = viewModel.saveUser(user);
@@ -78,6 +80,7 @@ public class DaftarActivity extends AppCompatActivity {
         return editNoKTP.getText().toString().isEmpty()
                 || editPassword.getText().toString().isEmpty()
                 || editEmail.getText().toString().isEmpty()
-                || editNama.getText().toString().isEmpty();
+                || editNama.getText().toString().isEmpty()
+                || editAlamat.getText().toString().isEmpty();
     }
 }
