@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -33,6 +34,7 @@ public class DetailPengaduanActivity extends AppCompatActivity {
     private TextView textNamaPelapor;
     private TextView textNoKTP;
     private TextView textEmail;
+    private ImageView foto;
 
     public static Intent newIntent(Context context, long id) {
         Intent intent = new Intent(context, DetailPengaduanActivity.class);
@@ -58,6 +60,7 @@ public class DetailPengaduanActivity extends AppCompatActivity {
         textNamaPelapor = findViewById(R.id.detail_pengaduan_nama_pelapor);
         textNoKTP = findViewById(R.id.detail_pengaduan_no_ktp_pelapor);
         textEmail = findViewById(R.id.detail_pengaduan_email_text);
+        foto = findViewById(R.id.detail_pengaduan_foto);
 
 
         long id = getIntent().getLongExtra(EXTRA_ID, -1);
@@ -70,8 +73,11 @@ public class DetailPengaduanActivity extends AppCompatActivity {
                 textDaerah2.setText(view.getProvinsi() + "/" + view.getKota());
                 textJumlahPasal.setText(String.valueOf(view.getJumlahPasal()) + " Pelanggaran");
                 textNamaPelapor.setText(view.getNamaPelapor());
-                textNoKTP.setText(view.getNoKTP());
+                textNoKTP.setText(view.getNoKTPUUser());
                 textEmail.setText(view.getEmail());
+                if(view.getFoto() != null) {
+                    foto.setImageBitmap(view.getFoto());
+                }
             });
 
             viewModel.getListPasalView(id).observe(this, pasalViews -> {

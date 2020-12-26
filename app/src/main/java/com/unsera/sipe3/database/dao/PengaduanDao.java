@@ -17,22 +17,22 @@ public abstract class PengaduanDao {
     @Insert
     abstract  void insertPelanggaran(List<Pelanggaran> pelanggaran);
 
-    @Query("SELECT p.id, k.nama, namaWakil, kota, provinsi, tanggal, status, terpilih, pidana, ps.jumlahPasal, u.nama as namaPelapor, u.noKTP, u.email " +
+    @Query("SELECT p.id, k.nama, namaWakil, kota, provinsi, tanggal, status, terpilih, pidana, ps.jumlahPasal, u.nama as namaPelapor, u.noKTPUUser, u.noKTP, u.email, p.foto " +
             "FROM (SELECT COUNT(*) as jumlahPasal, idPengaduan FROM Pelanggaran GROUP BY idPengaduan) as ps " +
             "LEFT OUTER JOIN Pengaduan p  ON ps.idPengaduan = p.id JOIN Kandidat k ON p.idKandidat = k.id JOIN Daerah d ON k.daerahId = d.id JOIN User u ON p.noKTP = u.noKTP WHERE p.terpilih = 1")
     abstract  public LiveData<List<PengaduanView>> getListPengaduanViewTerpilih();
 
-    @Query("SELECT p.id, k.nama, namaWakil, kota, provinsi, tanggal, status, terpilih, pidana, ps.jumlahPasal, u.nama as namaPelapor, u.noKTP, u.email " +
+    @Query("SELECT p.id, k.nama, namaWakil, kota, provinsi, tanggal, status, terpilih, pidana, ps.jumlahPasal, u.nama as namaPelapor, u.noKTPUUser, u.noKTP, u.email, p.foto " +
             "FROM (SELECT COUNT(*) as jumlahPasal, idPengaduan FROM Pelanggaran GROUP BY idPengaduan) as ps " +
             "LEFT OUTER JOIN Pengaduan p  ON ps.idPengaduan = p.id JOIN Kandidat k ON p.idKandidat = k.id JOIN Daerah d ON k.daerahId = d.id JOIN User u ON p.noKTP = u.noKTP")
     public abstract LiveData<List<PengaduanView>> getListPengaduanView();
 
-    @Query("SELECT p.id, k.nama, namaWakil, kota, provinsi, tanggal, status, terpilih, pidana, ps.jumlahPasal, u.nama as namaPelapor, u.noKTP, u.email " +
+    @Query("SELECT p.id, k.nama, namaWakil, kota, provinsi, tanggal, status, terpilih, pidana, ps.jumlahPasal, u.nama as namaPelapor, u.noKTPUUser, u.noKTP, u.email, p.foto " +
             "FROM (SELECT COUNT(*) as jumlahPasal, idPengaduan FROM Pelanggaran GROUP BY idPengaduan) as ps " +
             "LEFT OUTER JOIN Pengaduan p  ON ps.idPengaduan = p.id JOIN Kandidat k ON p.idKandidat = k.id JOIN Daerah d ON k.daerahId = d.id JOIN User u ON p.noKTP = u.noKTP WHERE p.terpilih = 0")
     public abstract LiveData<List<PengaduanView>> getListPengaduanViewDiproses();
 
-    @Query("SELECT p.id, k.nama, namaWakil, kota, provinsi, tanggal, status, terpilih, pidana, ps.jumlahPasal, u.nama as namaPelapor, u.noKTP, u.email " +
+    @Query("SELECT p.id, k.nama, namaWakil, kota, provinsi, tanggal, status, terpilih, pidana, ps.jumlahPasal, u.nama as namaPelapor, u.noKTPUUser, u.noKTP, u.email, p.foto " +
             "FROM (SELECT COUNT(*) as jumlahPasal, idPengaduan FROM Pelanggaran GROUP BY idPengaduan) as ps " +
             "LEFT OUTER JOIN Pengaduan p  ON ps.idPengaduan = p.id JOIN Kandidat k ON p.idKandidat = k.id JOIN Daerah d ON k.daerahId = d.id JOIN User u ON p.noKTP = u.noKTP WHERE p.id =:id")
     public abstract LiveData<PengaduanView> getPengaduanView(long id);

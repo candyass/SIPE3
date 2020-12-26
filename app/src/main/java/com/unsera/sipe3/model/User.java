@@ -14,6 +14,7 @@ public class User {
     @PrimaryKey
     @NonNull
     private String noKTP;
+    private String noKTPUUser;
     private String password;
     private String nama;
     private String email;
@@ -32,6 +33,17 @@ public class User {
         this.userType = userType;
         this.setEmail(email);
         this.setAlamatRumah(alamatRumah);
+    }
+
+    @Ignore
+    public User(String noKTP, String password, String nama, int userType, String email, String alamatRumah, String noKTPUUser) {
+        this.setNoKTP(noKTP);
+        this.setPassword(password);
+        this.setNama(nama);
+        this.userType = userType;
+        this.setEmail(email);
+        this.setAlamatRumah(alamatRumah);
+        this.setNoKTPUUser(noKTPUUser);
     }
 
 
@@ -86,5 +98,14 @@ public class User {
 
     public void setAlamatRumah(String alamatRumah) {
         this.alamatRumah = alamatRumah;
+    }
+
+
+    public String getNoKTPUUser() {
+        return noKTPUUser;
+    }
+
+    public void setNoKTPUUser(String noKTPUUser) {
+        this.noKTPUUser = noKTPUUser;
     }
 }

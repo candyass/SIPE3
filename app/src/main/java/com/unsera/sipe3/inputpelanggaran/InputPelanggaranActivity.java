@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -34,6 +35,7 @@ public class InputPelanggaranActivity extends AppCompatActivity {
     private TextView textNamaPelapor;
     private TextView textNoKTP;
     private TextView textEmail;
+    private ImageView foto;
 
     private long idPengaduan;
 
@@ -63,6 +65,7 @@ public class InputPelanggaranActivity extends AppCompatActivity {
         textNamaPelapor = findViewById(R.id.input_pelanggaran_nama_pelapor_text);
         textNoKTP = findViewById(R.id.input_pelanggaran_no_ktp);
         textEmail = findViewById(R.id.input_pelanggaran_email_text);
+        foto = findViewById(R.id.input_pelanggaran_foto);
 
 
         recyclerView.setLayoutManager(new LinearLayoutManager(getBaseContext()));
@@ -75,8 +78,11 @@ public class InputPelanggaranActivity extends AppCompatActivity {
                 textDaerah1.setText(view.getProvinsi() + "/" + view.getKota());
                 textDaerah2.setText(view.getProvinsi() + "/" + view.getKota());
                 textNamaPelapor.setText(view.getNamaPelapor());
-                textNoKTP.setText(view.getNoKTP());
+                textNoKTP.setText(view.getNoKTPUUser());
                 textEmail.setText(view.getEmail());
+                if(view.getFoto() != null) {
+                    foto.setImageBitmap(view.getFoto());
+                }
             });
 
             viewModel.getListPasalView(idPengaduan).observe(this, list -> {

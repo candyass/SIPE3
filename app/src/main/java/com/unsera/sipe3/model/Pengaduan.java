@@ -1,6 +1,8 @@
 package com.unsera.sipe3.model;
 
+import android.graphics.Bitmap;
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.room.Entity;
 import androidx.room.ForeignKey;
 import androidx.room.Ignore;
@@ -25,6 +27,8 @@ public class Pengaduan {
     private int pidana;
     private String status;
     private int terpilih;
+    @Nullable
+    private Bitmap foto;
 
     public Pengaduan() {
 
@@ -102,5 +106,14 @@ public class Pengaduan {
 
     public void setNoKTP(String noKTP) {
         this.noKTP = noKTP;
+    }
+
+
+    public Bitmap getFoto() {
+        return foto;
+    }
+
+    public void setFoto(Bitmap foto) {
+        this.foto = foto;
     }
 }

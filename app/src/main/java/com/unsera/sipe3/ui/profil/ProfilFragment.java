@@ -32,7 +32,7 @@ public class ProfilFragment extends Fragment {
         TextView textAlamat = root.findViewById(R.id.profil_alamat_text);
 
         viewModel.getUser(noKTP).observe(this, user -> {
-            textNoKTP.setText(user.getNoKTP());
+            textNoKTP.setText(user.getNoKTPUUser());
             textNama.setText(user.getNama());
             textEmail.setText(user.getEmail());
             textAlamat.setText(user.getAlamatRumah());

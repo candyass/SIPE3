@@ -142,7 +142,7 @@ public class PengaduanFragment extends Fragment {
             textJumlahPasal.setText("Jumlah Pasal : " + pengaduanView.getJumlahPasal());
             textStatus.setText(pengaduanView.getStatus());
             textNamaPelapor.setText(pengaduanView.getNamaPelapor());
-            textNoKTP.setText(pengaduanView.getNoKTP());
+            textNoKTP.setText(pengaduanView.getNoKTPUUser());
             textDaerah1.setText(view.getProvinsi() + "/" + view.getKota());
             textDaerah2.setText(view.getProvinsi() + "/" + view.getKota());
             if(view.getPidana() == Pengaduan.PIDANA_PROSES) {

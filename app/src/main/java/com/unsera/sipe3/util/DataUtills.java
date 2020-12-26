@@ -44,8 +44,9 @@ public class DataUtills {
 
     public static List<User> getListUser() {
         List<User> list = new ArrayList<>();
-        list.add(new User("111111", "admin", "Dicky", User.USER_PEMOHON, "dicky@gmail.com", "Komp.Taman Angsoka Permar RT 02 RW 08"));
-        list.add(new User("222222", "admin", "Mamat", User.USER_PENERIMA, "admin@gmail.com", "Komp.Taman Angsoka Permar RT 02 RW 08"));
+        list.add(new User("111111", "admin", "Dicky", User.USER_PEMOHON, "dicky@gmail.com", "Komp.Taman Angsoka Permar RT 02 RW 08", "3271046504930002"));
+        list.add(new User("333333", "admin", "Arif", User.USER_PEMOHON, "arif60@gmail.com", "Perumahan Puri Delta RT 04 RW 12", "3271046599956298"));
+        list.add(new User("222222", "admin", "Mamat", User.USER_PENERIMA, "admin@gmail.com", "Komp. Bumi Serang Indah RT 11 RW 12", "3271046544456777"));
         return list;
     }
 }

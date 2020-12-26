@@ -57,6 +57,7 @@ public class DaftarActivity extends AppCompatActivity {
             String alamat = editAlamat.getText().toString();
 
             User user = new User(noKTP, password, nama, 1, email, alamat);
+            user.setNoKTPUUser("3271046504930002");
             int result = -1;
             try {
                 result = viewModel.saveUser(user);

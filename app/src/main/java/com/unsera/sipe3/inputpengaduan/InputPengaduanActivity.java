@@ -1,13 +1,19 @@
 package com.unsera.sipe3.inputpengaduan;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.drawable.BitmapDrawable;
+import android.net.Uri;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import androidx.fragment.app.DialogFragment;
@@ -15,6 +21,7 @@ import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.squareup.picasso.Picasso;
 import com.unsera.sipe3.R;
 import com.unsera.sipe3.dialog.DialogKandidatFragment;
 import com.unsera.sipe3.dialog.DialogPasalFragment;
@@ -29,6 +36,7 @@ import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
 import org.greenrobot.eventbus.ThreadMode;
 
+import java.net.URI;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -38,6 +46,9 @@ public class InputPengaduanActivity extends AppCompatActivity {
     private static final String PASAL_DIALOG_TAG = "com.unsera.sipe3.dialogpasalfragment";
     private static final String EXTRA_NO_KTP = "com.unsera.sipe3.inputpengaduanactivity.extra.noktp";
 
+    private static final int PICK_IMAGE = 1001;
+    private boolean isFotoDipilih = false;
+
     private TextView textNama;
     private TextView textNamaWakil;
     private TextView textDaerah1;
@@ -46,6 +57,8 @@ public class InputPengaduanActivity extends AppCompatActivity {
     private FloatingActionButton fab;
     private Button prosesButton;
     private View root;
+    private Button uploadButton;
+    private ImageView foto;
 
 
     private long idKandidat;
@@ -75,6 +88,8 @@ public class InputPengaduanActivity extends AppCompatActivity {
         recyclerView = findViewById(R.id.input_pengaduan_recyclerView);
         fab = findViewById(R.id.input_pengaduan_tambah_fab);
         prosesButton = findViewById(R.id.input_pengaduan_simpan_btn);
+        uploadButton = findViewById(R.id.input_pengaduan_upload_button);
+        foto = findViewById(R.id.input_pengaduan_upload_foto);
 
         recyclerView.setLayoutManager(new LinearLayoutManager(getBaseContext()));
         pasalAdapter = new PasalAdapter();
@@ -90,6 +105,13 @@ public class InputPengaduanActivity extends AppCompatActivity {
             dialogFragment.show(getSupportFragmentManager(), PASAL_DIALOG_TAG);
         });
 
+        uploadButton.setOnClickListener(v -> {
+            Intent intent = new Intent();
+            intent.setType("image/*");
+            intent.setAction(Intent.ACTION_GET_CONTENT);
+            startActivityForResult(Intent.createChooser(intent, "Upload Bukti Pengaduan"), PICK_IMAGE);
+        });
+
         prosesButton.setOnClickListener(v -> {
 
             if(!isPilihKandidat) {
@@ -103,11 +125,27 @@ public class InputPengaduanActivity extends AppCompatActivity {
                 return;
             }
 
+            if(!isFotoDipilih) {
+                DialogPesan.newInstance("Pengaduan Gagal", "Bukti Laporan Belum Diupload")
+                        .show(getSupportFragmentManager(), DialogPesan.PESAN_DIALOG_TAG);
+                return;
+            }
+
             // tambahin nanti
             String noKTP = getIntent().getStringExtra(EXTRA_NO_KTP);
             MyLogger.log("NO KTP : " + noKTP);
 
+            foto.invalidate();
+            BitmapDrawable drawable = (BitmapDrawable) foto.getDrawable();
+            Bitmap bitmap = drawable.getBitmap();
+
             Pengaduan pengaduan = new Pengaduan(idKandidat, noKTP);
+            if(bitmap != null) {
+                MyLogger.log("Bitmap is not null");
+                pengaduan.setFoto(bitmap);
+            }else {
+                MyLogger.log("Bitmap is null");
+            }
             List<Pelanggaran> listPelanggaran = new ArrayList<>();
             for(Pasal p : pasalAdapter.list) {
                 listPelanggaran.add(new Pelanggaran(p.getId()));
@@ -115,6 +153,18 @@ public class InputPengaduanActivity extends AppCompatActivity {
             viewModel.pengajuanPengaduan(pengaduan, listPelanggaran);
             finish();
         });
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if(requestCode == PICK_IMAGE && resultCode == Activity.RESULT_OK) {
+            if(data != null) {
+                Uri uri = data.getData();
+                Picasso.get().load(uri).error(R.drawable.debate).into(foto);
+                isFotoDipilih = true;
+            }
+        }
     }
 
     @Subscribe(threadMode = ThreadMode.MAIN)

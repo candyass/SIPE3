@@ -1,5 +1,7 @@
 package com.unsera.sipe3.model;
 
+import android.graphics.Bitmap;
+
 import java.util.Date;
 
 public class PengaduanView {
@@ -17,6 +19,8 @@ public class PengaduanView {
     private String namaPelapor;
     private String noKTP;
     private String email;
+    private String noKTPUUser;
+    private Bitmap foto;
 
 
 
@@ -125,5 +129,23 @@ public class PengaduanView {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+
+    public String getNoKTPUUser() {
+        return noKTPUUser;
+    }
+
+    public void setNoKTPUUser(String noKTPUUser) {
+        this.noKTPUUser = noKTPUUser;
+    }
+
+
+    public Bitmap getFoto() {
+        return foto;
+    }
+
+    public void setFoto(Bitmap foto) {
+        this.foto = foto;
     }
 }
